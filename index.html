@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d19">
+<title>Fortunia Nexus | AI & Legal Innovation</title>
+<meta name="description" content="Fortunia Nexus — Connecting artificial intelligence, legal innovation, and the future of technology.">
+<style>
+:root {
+  --bg: #080d19;
+  --panel: #101a2c;
+  --text: #f4f6ff;
+  --muted: #a6b1c8;
+  --gold: #e8c779;
+  --blue: #91b7ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,13,25,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #253047;
+}
+nav {
+  max-width: 1160px;
+  min-height: 76px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo { font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: var(--gold); }
+.navlinks { display: flex; align-items: center; gap: 25px; }
+.navlinks a { font-size: 13px; color: var(--muted); }
+.navlinks a:hover { color: var(--gold); }
+select, .menu-button {
+  background: var(--panel);
+  border: 1px solid #34415b;
+  color: white;
+  border-radius: 8px;
+  padding: 9px;
+  cursor: pointer;
+}
+.hero {
+  max-width: 1160px;
+  min-height: 650px;
+  padding: 100px 24px 90px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 45px;
+}
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  border: 1px solid #695831;
+  background: #191b22;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+h1 {
+  font-size: clamp(42px, 6vw, 70px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 25px 0;
+}
+.gradient {
+  background: linear-gradient(100deg, #f4e0a7, #93b8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p, .section-intro { color: var(--muted); font-size: 17px; }
+.actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+.btn {
+  display: inline-block;
+  padding: 12px 21px;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid #35425c;
+  cursor: pointer;
+}
+.btn-primary { background: var(--gold); color: #171717; border-color: var(--gold); }
+.btn-secondary { background: transparent; color: white; }
+.btn:hover { transform: translateY(-2px); }
+.visual {
+  position: relative;
+  min-height: 380px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #293852;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at center, #1a3153 0%, #101a2c 45%, #0a1020 75%);
+}
+.orbit {
+  width: 230px;
+  height: 230px;
+  border: 1px solid #b9c9ef66;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 65px #648de52a;
+  position: relative;
+}
+.orbit:before, .orbit:after {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px solid #b9c9ef55;
+  border-radius: 50%;
+}
+.orbit:after { inset: -28px; transform: rotateX(65deg); }
+.core {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #172039;
+  background: linear-gradient(135deg, #f4e0a7, #90b6ff);
+  box-shadow: 0 0 60px #86aaff55;
+}
+.float {
+  position: absolute;
+  background: #172238;
+  border: 1px solid #344562;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 12px;
+  color: #dce6ff;
+}
+.float-one { top: 18%; left: 5%; }
+.float-two { bottom: 17%; right: 5%; }
+section { scroll-margin-top: 85px; }
+.section { padding: 90px 24px; }
+.section-inner { max-width: 1100px; margin: auto; }
+.section-heading { text-align: center; max-width: 700px; margin: 0 auto 45px; }
+h2 { font-size: clamp(30px, 4vw, 43px); line-height: 1.2; margin: 14px 0; }
+.kicker { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  padding: 28px;
+  border: 1px solid #28354c;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #111c30, #0b1220);
+}
+.card:hover { border-color: #bba265; }
+.card-icon { font-size: 28px; }
+.card h3 { font-size: 19px; margin: 16px 0 8px; }
+.card p { font-size: 14px; color: var(--muted); }
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+.about-panel {
+  min-height: 290px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #34415b;
+  background: radial-gradient(circle, #1b3150, #101827 70%);
+}
+.about-symbol { font-size: 66px; color: var(--gold); }
+.about-copy p { color: var(--muted); }
+.values { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.values span { padding: 7px 12px; border: 1px solid #34415b; border-radius: 25px; font-size: 12px; }
+.contact-box {
+  max-width: 780px;
+  margin: auto;
+  padding: 45px 28px;
+  text-align: center;
+  border: 1px solid #3b4760;
+  border-radius: 22px;
+  background: radial-gradient(ellipse at top, #1a2c48, #0d1422 75%);
+}
+footer {
+  border-top: 1px solid #253047;
+  padding: 28px 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+footer strong { color: var(--gold); }
+@media (max-width: 760px) {
+  nav { flex-wrap: wrap; }
+  .navlinks { order: 3; width: 100%; justify-content: space-between; gap: 10px; }
+  .navlinks a { font-size: 12px; }
+  .hero { grid-template-columns: 1fr; padding-top: 65px; gap: 30px; }
+  .visual { min-height: 320px; }
+  .cards { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  h1 { letter-spacing: -1px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="logo" href="#home">FORTUNIA <span>NEXUS</span></a>
+    <div class="navlinks">
+      <a href="#home" data-i="navHome">Beranda</a>
+      <a href="#about" data-i="navAbout">Tentang</a>
+      <a href="#services" data-i="navServices">Layanan</a>
+      <a href="#contact" data-i="navContact">Kontak</a>
+    </div>
+    <select id="language" aria-label="Choose language">
+      <option value="id">ID</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+    </select>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <span class="eyebrow" data-i="eyebrow">TECHNOLOGY · LAW · INNOVATION</span>
+    <h1 data-i="headline">Membangun Masa Depan dengan <span class="gradient">AI & Inovasi Hukum.</span></h1>
+    <p data-i="heroText">Fortunia Nexus menjembatani teknologi, kecerdasan buatan, dan pemikiran hukum untuk membuka peluang baru di era digital.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#services" data-i="explore">Jelajahi Layanan ↗</a>
+      <a class="btn btn-secondary" href="#about" data-i="discover">Kenali Kami</a>
+    </div>
+  </div>
+  <div class="visual" aria-label="Abstract technology illustration">
+    <div class="float float-one">✦ AI Innovation</div>
+    <div class="orbit"><div class="core">FN</div></div>
+    <div class="float float-two">⚖ Legal Technology</div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-panel">
+      <div>
+        <div class="about-symbol">✧</div>
+        <h3>Ideas Into Impact</h3>
+        <p data-i="panelText">Teknologi untuk masa depan yang lebih cerdas.</p>
+      </div>
+    </div>
+    <div class="about-copy">
+      <span class="kicker" data-i="aboutKicker">Tentang Fortunia Nexus</span>
+      <h2 data-i="aboutTitle">Menghubungkan Ide dengan <span class="gradient">Kemungkinan Baru.</span></h2>
+      <p data-i="aboutText">Kami membangun gagasan di persimpangan kecerdasan buatan, teknologi, dan inovasi hukum. Visi kami adalah mendorong pemanfaatan teknologi yang lebih cerdas, bertanggung jawab, dan mudah diakses.</p>
+      <div class="values">
+        <span data-i="value1">Inovasi</span>
+        <span data-i="value2">Integritas</span>
+        <span data-i="value3">Teknologi Bertanggung Jawab</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background:#0b1120">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="kicker" data-i="serviceKicker">Apa yang Kami Kembangkan</span>
+      <h2 data-i="serviceTitle">Solusi untuk Era Digital</h2>
+      <p class="section-intro" data-i="serviceIntro">Mengeksplorasi peluang teknologi melalui pendekatan yang strategis dan berorientasi pada manusia.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">⌘</div>
+        <h3 data-i="card1Title">AI & Teknologi</h3>
+        <p data-i="card1Text">Eksplorasi kecerdasan buatan dan solusi digital untuk membantu menjawab kebutuhan masa kini.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⚖</div>
+        <h3 data-i="card2Title">Legal Innovation</h3>
+        <p data-i="card2Text">Mengembangkan ide teknologi hukum yang mendukung akses informasi dan pemahaman hukum.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">◇</div>
+        <h3 data-i="card3Title">Strategi Digital</h3>
+        <p data-i="card3Text">Menyusun konsep dan strategi inovasi untuk menghubungkan teknologi dengan kebutuhan bisnis.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="contact-box">
+      <span class="kicker" data-i="contactKicker">Mari Terhubung</span>
+      <h2 data-i="contactTitle">Punya Ide untuk Masa Depan?</h2>
+      <p class="section-intro" data-i="contactText">Kami terbuka untuk percakapan, kolaborasi, dan peluang inovasi baru.</p>
+      <a class="btn btn-primary" href="mailto:hello@fortunianexus.com" data-i="contactButton">Hubungi Kami ↗</a>
+      <p style="font-size:12px;color:#a6b1c8" data-i="emailNote">Ganti alamat email ini dengan email resmi kamu jika diperlukan.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>FORTUNIA NEXUS</strong>
+  <p>© <span id="year"></span> Fortunia Nexus. <span data-i="rights">Hak cipta dilindungi.</span></p>
+  <p data-i="footerNote">Technology with purpose. Innovation with integrity.</p>
+</footer>
+
+<script>
+const translations = {
+id: {
+navHome:"Beranda",navAbout:"Tentang",navServices:"Layanan",navContact:"Kontak",
+eyebrow:"TEKNOLOGI · HUKUM · INOVASI",
+headline:'Membangun Masa Depan dengan <span class="gradient">AI & Inovasi Hukum.</span>',
+heroText:"Fortunia Nexus menjembatani teknologi, kecerdasan buatan, dan pemikiran hukum untuk membuka peluang baru di era digital.",
+explore:"Jelajahi Layanan ↗",discover:"Kenali Kami",panelText:"Teknologi untuk masa depan yang lebih cerdas.",
+aboutKicker:"Tentang Fortunia Nexus",
+aboutTitle:'Menghubungkan Ide dengan <span class="gradient">Kemungkinan Baru.</span>',
+aboutText:"Kami membangun gagasan di persimpangan kecerdasan buatan, teknologi, dan inovasi hukum. Visi kami adalah mendorong pemanfaatan teknologi yang lebih cerdas, bertanggung jawab, dan mudah diakses.",
+value1:"Inovasi",value2:"Integritas",value3:"Teknologi Bertanggung Jawab",
+serviceKicker:"Apa yang Kami Kembangkan",serviceTitle:"Solusi untuk Era Digital",
+serviceIntro:"Mengeksplorasi peluang teknologi melalui pendekatan yang strategis dan berorientasi pada manusia.",
+card1Title:"AI & Teknologi",card1Text:"Eksplorasi kecerdasan buatan dan solusi digital untuk membantu menjawab kebutuhan masa kini.",
+card2Title:"Inovasi Hukum",card2Text:"Mengembangkan ide teknologi hukum yang mendukung akses informasi dan pemahaman hukum.",
+card3Title:"Strategi Digital",card3Text:"Menyusun konsep dan strategi inovasi untuk menghubungkan teknologi dengan kebutuhan bisnis.",
+contactKicker:"Mari Terhubung",contactTitle:"Punya Ide untuk Masa Depan?",
+contactText:"Kami terbuka untuk percakapan, kolaborasi, dan peluang inovasi baru.",
+contactButton:"Hubungi Kami ↗",emailNote:"Ganti alamat email ini dengan email resmi kamu jika diperlukan.",
+rights:"Hak cipta dilindungi.",footerNote:"Teknologi dengan tujuan. Inovasi dengan integritas."
+},
+en: {
+navHome:"Home",navAbout:"About",navServices:"Services",navContact:"Contact",
+eyebrow:"TECHNOLOGY · LAW · INNOVATION",
+headline:'Building the Future with <span class="gradient">AI & Legal Innovation.</span>',
+heroText:"Fortunia Nexus bridges technology, artificial intelligence, and legal thinking to unlock new opportunities in the digital age.",
+explore:"Explore Services ↗",discover:"Discover Us",panelText:"Technology for a smarter future.",
+aboutKicker:"About Fortunia Nexus",
+aboutTitle:'Connecting Ideas to <span class="gradient">New Possibilities.</span>',
+aboutText:"We develop ideas at the intersection of artificial intelligence, technology, and legal innovation. Our vision is to encourage smarter, responsible, and accessible use of technology.",
+value1:"Innovation",value2:"Integrity",value3:"Responsible Technology",
+serviceKicker:"What We Explore",serviceTitle:"Solutions for the Digital Age",
+serviceIntro:"Exploring technological opportunities through strategic and human-centered approaches.",
+card1Title:"AI & Technology",card1Text:"Exploring artificial intelligence and digital solutions to address today's needs.",
+card2Title:"Legal Innovation",card2Text:"Developing legal technology concepts that support access to information and legal understanding.",
+card3Title:"Digital Strategy",card3Text:"Creating innovation concepts and strategies that connect technology with business needs.",
+contactKicker:"Let's Connect",contactTitle:"Have an Idea for the Future?",
+contactText:"We welcome conversations, collaborations, and new opportunities for innovation.",
+contactButton:"Contact Us ↗",emailNote:"Replace this address with your official email if needed.",
+rights:"All rights reserved.",footerNote:"Technology with purpose. Innovation with integrity."
+},
+es: {
+navHome:"Inicio",navAbout:"Nosotros",navServices:"Servicios",navContact:"Contacto",
+eyebrow:"TECNOLOGÍA · DERECHO · INNOVACIÓN",
+headline:'Construyendo el Futuro con <span class="gradient">IA e Innovación Jurídica.</span>',
+heroText:"Fortunia Nexus conecta la tecnología, la inteligencia artificial y el pensamiento jurídico para abrir nuevas oportunidades en la era digital.",
+explore:"Explorar Servicios ↗",discover:"Conócenos",panelText:"Tecnología para un futuro más inteligente.",
+aboutKicker:"Sobre Fortunia Nexus",
+aboutTitle:'Conectando Ideas con <span class="gradient">Nuevas Posibilidades.</span>',
+aboutText:"Desarrollamos ideas en la intersección de la inteligencia artificial, la tecnología y la innovación jurídica. Nuestra visión es fomentar un uso de la tecnología más inteligente, responsable y accesible.",
+value1:"Innovación",value2:"Integridad",value3:"Tecnología Responsable",
+serviceKicker:"Lo que Exploramos",serviceTitle:"Soluciones para la Era Digital",
+serviceIntro:"Exploramos oportunidades tecnológicas mediante enfoques estratégicos y centrados en las personas.",
+card1Title:"IA y Tecnología",card1Text:"Exploramos la inteligencia artificial y soluciones digitales para responder a las necesidades actuales.",
+card2Title:"Innovación Jurídica",card2Text:"Desarrollamos ideas de tecnología jurídica que facilitan el acceso a la información y la comprensión del derecho.",
+card3Title:"Estrategia Digital",card3Text:"Creamos conceptos y estrategias de innovación que conectan la tecnología con las necesidades empresariales.",
+contactKicker:"Conectemos",contactTitle:"¿Tienes una Idea para el Futuro?",
+contactText:"Estamos abiertos a conversaciones, colaboraciones y nuevas oportunidades de innovación.",
+contactButton:"Contáctanos ↗",emailNote:"Sustituye esta dirección por tu correo oficial si es necesario.",
+rights:"Todos los derechos reservados.",footerNote:"Tecnología con propósito. Innovación con integridad."
+}
+};
+function setLanguage(lang) {
+const dict = translations[lang] || translations.id;
+document.documentElement.lang = lang;
+document.querySelectorAll("[data-i]").forEach(el => {
+const key = el.dataset.i;
+if (dict[key]) el.innerHTML = dict[key];
+});
+}
+document.getElementById("language").addEventListener("change", e => setLanguage(e.target.value));
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
